@@ -1,0 +1,128 @@
+/* ============================================
+   LANDING PAGE STYLES — Monkeytype aesthetic
+   ============================================ */
+
+.landing {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+/* Hero Section */
+.landing-hero {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.landing-hero h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.landing-hero p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Data Structure Cards */
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.card:hover {
+  background: var(--surface-2);
+  transform: translateY(-2px);
+}
+
+.card:hover h3 {
+  color: var(--primary);
+}
+
+.card--disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.card:hover .card-icon {
+  color: var(--primary);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  transition: color 0.2s ease;
+}
+
+.card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.card-ops {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  opacity: 0.7;
+}
+
+.card:hover .card-ops {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.6rem;
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-mono);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .landing-hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .landing-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizer &mdash; Visual Data Structures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/visualizer.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <a href="index.html" class="header-back">&larr; Back</a>
+    <h1 class="header-title">Visual Data Structures</h1>
+    <span class="header-ds" id="ds-name">Stack</span>
+  </header>
+
+  <!-- ===== Three-Column Layout ===== -->
+  <main class="visualizer">
+
+    <!-- LEFT — Controls Panel -->
+    <aside class="panel panel--controls" id="controls-panel">
+      <h2 class="panel-title">Operations</h2>
+      <div class="control-group" id="operation-controls">
+        <!-- Populated by app.js -->
+      </div>
+
+      <h2 class="panel-title">Animation</h2>
+      <div class="control-group">
+        <div class="animation-controls" id="animation-controls">
+          <button class="btn btn--icon" id="btn-reset"        title="Reset">&#x23EE;</button>
+          <button class="btn btn--icon" id="btn-step-back"    title="Step Back">&#x23EA;</button>
+          <button class="btn btn--icon btn--primary" id="btn-play" title="Play">&#x25B6;</button>
+          <button class="btn btn--icon" id="btn-step-forward" title="Step Forward">&#x23E9;</button>
+        </div>
+        <div class="speed-control">
+          <label for="speed-slider">Step delay:</label>
+          <input type="range" id="speed-slider" min="200" max="2000" value="800" step="100">
+          <span id="speed-value">800ms</span>
+        </div>
+        <div class="step-indicator" id="step-indicator">No steps</div>
+      </div>
+
+      <h2 class="panel-title">Data</h2>
+      <div class="control-group">
+        <button class="btn btn--danger" id="btn-clear">Clear Structure</button>
+      </div>
+    </aside>
+
+    <!-- CENTER — Visualization Canvas -->
+    <section class="canvas" id="canvas">
+      <div class="canvas-inner" id="visualization">
+        <p class="canvas-placeholder">Perform an operation to see the visualization</p>
+      </div>
+    </section>
+
+    <!-- RIGHT — Explanation Panel -->
+    <aside class="panel panel--info" id="info-panel">
+      <h2 class="panel-title">Current Step</h2>
+      <div class="info-section" id="explanation">
+        <p class="info-placeholder">Perform an operation to see step-by-step explanation</p>
+      </div>
+
+      <h2 class="panel-title">Pseudocode</h2>
+      <div class="info-section pseudocode-container" id="pseudocode"></div>
+
+      <h2 class="panel-title">Time Complexity</h2>
+      <div class="info-section" id="complexity">
+        <span class="big-o">&mdash;</span>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Scripts: order matters (engine → renderer → data structures → app) -->
+  <script src="js/engine.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/stack.js"></script>
+  <script src="js/array.js"></script>
+  <script src="js/queue.js"></script>
+  <script src="js/linkedlist.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
